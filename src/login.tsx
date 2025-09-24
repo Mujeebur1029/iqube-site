@@ -7,7 +7,12 @@ const Login: React.FC = () => {
   const [activeSlide, setActiveSlide] = useState(0);
   const navigate = useNavigate();
 
-  const slides = ["/CB121.jpg", "/RK0E76.jpg", "/pos-2.jpg"];
+  // ✅ Images now load correctly from the public/ folder on GitHub Pages
+  const slides = [
+    `${process.env.PUBLIC_URL}/CB121.jpg`,
+    `${process.env.PUBLIC_URL}/RK0E76.jpg`,
+    `${process.env.PUBLIC_URL}/pos-2.jpg`,
+  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -24,7 +29,12 @@ const Login: React.FC = () => {
   return (
     <div className="container">
       <div className="form-section">
-        <img src="/icube-logo.png" alt="icube logo" className="logo" />
+        {/* ✅ Logo also fixed */}
+        <img
+          src={`${process.env.PUBLIC_URL}/icube-logo.png`}
+          alt="icube logo"
+          className="logo"
+        />
         <p className="subtitle">
           Enter your username and password to continue
         </p>

@@ -27,7 +27,11 @@ const Dashboard: React.FC = () => {
       {/* Sidebar */}
       <aside className="sidebar">
         <div className="logo-section">
-          <img src="/icube-logo.png" alt="icube logo" className="logo" />
+          <img
+            src={`${process.env.PUBLIC_URL}/icube-logo.png`}
+            alt="icube logo"
+            className="logo"
+          />
           <div className="search-box sidebar-search">
             <Search size={16} className="search-icon" />
             <input type="text" placeholder="Search..." />
@@ -127,7 +131,7 @@ const Dashboard: React.FC = () => {
         {/* Dashboard Content */}
         <div className="dashboard-content">
           <img
-            src="/pinacular.png"
+            src={`${process.env.PUBLIC_URL}/pinacular.png`}
             alt="Dashboard Illustration"
             className="dashboard-image"
           />

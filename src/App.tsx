@@ -7,7 +7,7 @@ import OrderInfo from "./OrderInfo";   // ✅ Import OrderInfo
 
 function App() {
   return (
-    <Router>
+    
       <Routes>
         {/* Default route goes to login */}
         <Route path="/" element={<Navigate to="/login" />} />
@@ -18,7 +18,7 @@ function App() {
         <Route path="/dashboard/procurement-order" element={<Order />} />
         <Route path="/dashboard/procurement-order/info" element={<OrderInfo />} /> {/* NEW PAGE */}
       </Routes>
-    </Router>
+    
   );
 }
 
