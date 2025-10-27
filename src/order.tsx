@@ -144,36 +144,36 @@ const Order: React.FC = () => {
               <th>Validity</th>
               <th>Status</th>
             </tr>
+            
           </thead>
           <tbody>
-            {filtered.map((o, i) => (
-              <tr key={i}>
-                <td>{o.poNo}</td>
-                <td>{o.poDate}</td>
-                <td>{o.createdBy}</td>
-                <td>{o.qty}</td>
-                <td>{o.amount}</td>
-                <td>{o.stockPoint}</td>
-                <td>{o.type}</td>
-                <td>{o.currency}</td>
-                <td>{o.docDate}</td>
-                <td>{o.validity}</td>
-                <td>
-                  <span
-                    className={`status-badge ${
-                      o.status === "Open"
-                        ? "badge-open"
-                        : o.status === "Approved"
-                        ? "badge-approved"
-                        : "badge-progress"
-                    }`}
-                  >
-                    {o.status}
-                  </span>
-                </td>
-              </tr>
-            ))}
-          </tbody>
+  {filtered.map((o, i) => (
+    <tr key={i}>
+      <td data-label="PO No">{o.poNo}</td>
+      <td data-label="PO Date">{o.poDate}</td>
+      <td data-label="Created By">{o.createdBy}</td>
+      <td data-label="Qty">{o.qty}</td>
+      <td data-label="Amount">{o.amount}</td>
+      <td data-label="Stock Point">{o.stockPoint}</td>
+      <td data-label="Type">{o.type}</td>
+      <td data-label="Currency">{o.currency}</td>
+      <td data-label="Doc Date">{o.docDate}</td>
+      <td data-label="Validity">{o.validity}</td>
+      <td data-label="Status">
+        <span className={`status-badge ${
+          o.status === "Open"
+            ? "badge-open"
+            : o.status === "Approved"
+            ? "badge-approved"
+            : "badge-progress"
+        }`}>
+          {o.status}
+        </span>
+      </td>
+    </tr>
+  ))}
+</tbody>
+
         </table>
       </div>
 

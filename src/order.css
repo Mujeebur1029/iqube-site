@@ -38,7 +38,7 @@
 }
 .order-sub {
   font-size: 14px;
-  color: #64748b;
+  color: #66768e;
   margin-top: 3px;
 }
 .header-actions button {
@@ -93,11 +93,11 @@
 .status-card .count {
   font-size: 18px;
 }
-.status-card.open { background: #5583e8; }
-.status-card.cancelled { background: #eb6c6c; }
-.status-card.approved { background: #5cefbe; color: #065f46; }
-.status-card.hold { background: #f3be63; color: #78350f; }
-.status-card.total { background: #4f5660; }
+.status-card.open { background: #608be9f7; }
+.status-card.cancelled { background: #ee9494; }
+.status-card.approved { background: #90ecce; color: #06553f; }
+.status-card.hold { background: #f1ce91; color: #78350f; }
+.status-card.total { background: #a0acbc; }
 
 /* ===== Table Styling ===== */
 .table-wrap {
@@ -324,4 +324,232 @@
   flex: 1;      /* both inputs equal width */
   min-width: 0; /* prevents overflow */
 }
+/* ===== Your existing CSS (unchanged desktop design) ===== */
+/* Paste your full desktop code here (same as the one you shared) */
 
+/* ===== Responsive Enhancements ===== */
+
+/* ===== Existing Desktop Design (unchanged) ===== */
+/* Keep all your existing desktop styles as-is above this line */
+
+
+/* ===== Mobile View: Card Layout + Search/Filter Enhancements ===== */
+@media (max-width: 768px) {
+  .order-page {
+    padding: 12px;
+  }
+
+  /* Header and Buttons stacked neatly */
+  .order-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .header-actions {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .header-actions button {
+    flex: 1;
+  }
+
+  /* Horizontal scroll for status cards */
+  .status-row {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+  }
+
+  .status-card {
+    flex: 0 0 160px;
+    scroll-snap-align: start;
+    min-width: 160px;
+    text-align: center;
+  }
+
+  /* ===== Search + Filter Bar ===== */
+  .mobile-search-filter {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+
+  .mobile-search-filter input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+
+  .mobile-search-filter button {
+    background: #0c5ac8;
+    color: #e88686;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-weight: 600;
+  }
+
+  /* ===== Card Layout for Orders ===== */
+  .order-table thead {
+    display: none;
+  }
+
+  .order-table,
+  .order-table tbody,
+  .order-table tr,
+  .order-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .order-table tr {
+    background: linear-gradient(135deg, #d2f5cb 0%, #e6a8a8 100%);
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin-bottom: 18px;
+    padding: 16px 18px;
+    border: 1px solid #eef2ff;
+  }
+
+  /* PO No - at top with clickable color */
+  .order-table td[data-label="PO No"] {
+    font-weight: 700;
+    color: #0c5ac8;
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+
+  /* Spacing between info lines */
+  .order-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    padding: 4px 0;
+    font-size: 14px;
+    color: #334155;
+  }
+
+  /* Compact info layout */
+  .order-table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #475569;
+    flex-basis: 45%;
+    text-align: left;
+  }
+
+  /* Hide less important columns in mobile cards */
+  .order-table td[data-label="PO Date"],
+  .order-table td[data-label="Currency"],
+  .order-table td[data-label="Stock Point"],
+  .order-table td[data-label="Doc Date"],
+  .order-table td[data-label="Validity"] {
+    display: none;
+  }
+
+  /* Status badge styling inside card */
+  .status-badge {
+    padding: 4px 10px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  /* Subtle background colors for better contrast */
+  .badge-open {
+    background: #e0e7ff;
+    color: #1e3a8a;
+  }
+  .badge-approved {
+    background: #d1fae5;
+    color: #047857;
+  }
+
+  /* Adjust gap between each info group */
+  .order-table tr > td + td {
+    margin-top: 6px;
+  }
+
+  /* Remove table border & shadow wrapper */
+  .table-wrap {
+    border: none;
+    box-shadow: none;
+    background: transparent;
+  }
+
+  /* Modal Responsiveness (unchanged) */
+  .modal-box {
+    width: 95%;
+    max-height: 85vh;
+    padding: 18px;
+  }
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .modal-footer {
+    flex-direction: column;
+  }
+  .modal-footer button {
+    width: 100%;
+  }
+}
+/* ===== Mobile: Make Modal Fullscreen ===== */
+@media (max-width: 768px) {
+  .modal-overlay {
+    background: #fff; /* remove dim background for clean fullscreen look */
+    backdrop-filter: none;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow: auto;
+  }
+
+  .modal-box {
+    width: 100%;
+    height: 100vh; /* full viewport height */
+    border-radius: 0;
+    box-shadow: none;
+    padding: 20px;
+    overflow-y: auto;
+  }
+
+  .cancel-tab {
+    top: 16px;
+    right: 16px;
+    font-size: 20px;
+  }
+
+  /* Form grid full-width layout */
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .form-grid input,
+  .form-grid select {
+    font-size: 15px;
+    padding: 10px 12px;
+  }
+
+  /* Buttons full width */
+  .modal-footer {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .modal-footer button {
+    width: 100%;
+    font-size: 16px;
+    padding: 12px;
+  }
+}
