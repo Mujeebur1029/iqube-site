@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/iqube-site/static/css/main.5a31f971.css",
-    "main.js": "/iqube-site/static/js/main.82767122.js",
+    "main.css": "/iqube-site/static/css/main.379cb46b.css",
+    "main.js": "/iqube-site/static/js/main.faa49023.js",
     "index.html": "/iqube-site/index.html",
-    "main.5a31f971.css.map": "/iqube-site/static/css/main.5a31f971.css.map",
-    "main.82767122.js.map": "/iqube-site/static/js/main.82767122.js.map"
+    "main.379cb46b.css.map": "/iqube-site/static/css/main.379cb46b.css.map",
+    "main.faa49023.js.map": "/iqube-site/static/js/main.faa49023.js.map"
   },
   "entrypoints": [
-    "static/css/main.5a31f971.css",
-    "static/js/main.82767122.js"
+    "static/css/main.379cb46b.css",
+    "static/js/main.faa49023.js"
   ]
 }
