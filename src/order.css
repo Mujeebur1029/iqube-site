@@ -334,7 +334,7 @@
 
 
 /* ===== Mobile View: Card Layout + Search/Filter Enhancements ===== */
-@media (max-width: 768px) {
+
   .order-page {
     padding: 12px;
   }
@@ -400,6 +400,9 @@
   }
 
   /* ===== Card Layout for Orders ===== */
+  
+
+  /* ===== Purchase Order Card Style ===== */
   .order-table thead {
     display: none;
   }
@@ -413,143 +416,93 @@
   }
 
   .order-table tr {
-    background: linear-gradient(135deg, #d2f5cb 0%, #e6a8a8 100%);
+    background: linear-gradient(135deg, #d1f2ff 0%, #ffd6d6 100%);
     border-radius: 14px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     margin-bottom: 18px;
     padding: 16px 18px;
     border: 1px solid #eef2ff;
+    position: relative;
   }
 
-  /* PO No - at top with clickable color */
-  .order-table td[data-label="PO No"] {
-    font-weight: 700;
-    color: #0c5ac8;
-    font-size: 15px;
-    margin-bottom: 6px;
-  }
-
-  /* Spacing between info lines */
-  .order-table td {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: none;
-    padding: 4px 0;
-    font-size: 14px;
-    color: #334155;
-  }
-
-  /* Compact info layout */
-  .order-table td::before {
-    content: attr(data-label);
-    font-weight: 600;
-    color: #475569;
-    flex-basis: 45%;
-    text-align: left;
-  }
-
-  /* Hide less important columns in mobile cards */
-  .order-table td[data-label="PO Date"],
-  .order-table td[data-label="Currency"],
-  .order-table td[data-label="Stock Point"],
-  .order-table td[data-label="Doc Date"],
-  .order-table td[data-label="Validity"] {
+  @media (max-width: 768px) {
+  .order-table thead {
     display: none;
   }
 
-  /* Status badge styling inside card */
+  .order-table,
+  .order-table tbody,
+  .order-table tr,
+  .order-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .order-table tr {
+    background: linear-gradient(135deg, #d9f7e9 0%, #ffe6e6 100%);
+    border-radius: 14px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 18px;
+    padding: 18px;
+    border: 1px solid #eef2ff;
+  }
+
+  .order-table td {
+    display: inline-block;
+    width: 48%;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #0f172a;
+    vertical-align: top;
+  }
+
+  .order-table td:nth-child(even) {
+    text-align: right;
+  }
+
+  .order-table .label {
+    display: block;
+    font-weight: 600;
+    color: #64748b;
+    font-size: 13px;
+    margin-bottom: 2px;
+  }
+
+  .order-table td[data-label="PO No"],
+  .order-table td[data-label="Status"] {
+    font-weight: 700;
+    color: #0c5ac8;
+  }
+
+  .order-table td[data-label="Amount"] {
+    font-weight: 700;
+  }
+
   .status-badge {
-    padding: 4px 10px;
+    padding: 3px 10px;
     border-radius: 10px;
     font-size: 12px;
     font-weight: 600;
+    margin-left: 6px;
   }
 
-  /* Subtle background colors for better contrast */
   .badge-open {
     background: #e0e7ff;
     color: #1e3a8a;
   }
+
   .badge-approved {
     background: #d1fae5;
     color: #047857;
   }
 
-  /* Adjust gap between each info group */
-  .order-table tr > td + td {
-    margin-top: 6px;
+  .badge-progress {
+    background: #fef3c7;
+    color: #92400e;
   }
 
-  /* Remove table border & shadow wrapper */
   .table-wrap {
-    border: none;
-    box-shadow: none;
     background: transparent;
-  }
-
-  /* Modal Responsiveness (unchanged) */
-  .modal-box {
-    width: 95%;
-    max-height: 85vh;
-    padding: 18px;
-  }
-  .form-grid {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-  .modal-footer {
-    flex-direction: column;
-  }
-  .modal-footer button {
-    width: 100%;
-  }
-}
-/* ===== Mobile: Make Modal Fullscreen ===== */
-@media (max-width: 768px) {
-  .modal-overlay {
-    background: #fff; /* remove dim background for clean fullscreen look */
-    backdrop-filter: none;
-    justify-content: flex-start;
-    align-items: flex-start;
-    overflow: auto;
-  }
-
-  .modal-box {
-    width: 100%;
-    height: 100vh; /* full viewport height */
-    border-radius: 0;
     box-shadow: none;
-    padding: 20px;
-    overflow-y: auto;
-  }
-
-  .cancel-tab {
-    top: 16px;
-    right: 16px;
-    font-size: 20px;
-  }
-
-  /* Form grid full-width layout */
-  .form-grid {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-
-  .form-grid input,
-  .form-grid select {
-    font-size: 15px;
-    padding: 10px 12px;
-  }
-
-  /* Buttons full width */
-  .modal-footer {
-    flex-direction: column;
-    gap: 10px;
-  }
-  .modal-footer button {
-    width: 100%;
-    font-size: 16px;
-    padding: 12px;
   }
 }

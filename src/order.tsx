@@ -149,30 +149,41 @@ const Order: React.FC = () => {
           <tbody>
   {filtered.map((o, i) => (
     <tr key={i}>
-      <td data-label="PO No">{o.poNo}</td>
-      <td data-label="PO Date">{o.poDate}</td>
-      <td data-label="Created By">{o.createdBy}</td>
-      <td data-label="Qty">{o.qty}</td>
-      <td data-label="Amount">{o.amount}</td>
-      <td data-label="Stock Point">{o.stockPoint}</td>
-      <td data-label="Type">{o.type}</td>
-      <td data-label="Currency">{o.currency}</td>
-      <td data-label="Doc Date">{o.docDate}</td>
-      <td data-label="Validity">{o.validity}</td>
+      <td data-label="PO No">
+        <span className="label">PO No:</span> {o.poNo}
+      </td>
       <td data-label="Status">
-        <span className={`status-badge ${
-          o.status === "Open"
-            ? "badge-open"
-            : o.status === "Approved"
-            ? "badge-approved"
-            : "badge-progress"
-        }`}>
+        <span className="label">Status:</span>
+        <span
+          className={`status-badge ${
+            o.status === "Open"
+              ? "badge-open"
+              : o.status === "Approved"
+              ? "badge-approved"
+              : "badge-progress"
+          }`}
+        >
           {o.status}
         </span>
+      </td>
+
+      <td data-label="Created By">
+        <span className="label">Created By:</span> {o.createdBy}
+      </td>
+      <td data-label="PO Date">
+        <span className="label">PO Date:</span> {o.poDate}
+      </td>
+
+      <td data-label="Amount">
+        <span className="label">Amount:</span> ₹{o.amount}
+      </td>
+      <td data-label="Qty">
+        <span className="label">Qty:</span> {o.qty}
       </td>
     </tr>
   ))}
 </tbody>
+
 
         </table>
       </div>
